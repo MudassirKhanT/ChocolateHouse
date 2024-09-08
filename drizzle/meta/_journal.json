@@ -15,6 +15,41 @@
       "when": 1725708806789,
       "tag": "0001_futuristic_weapon_omega",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1725719451779,
+      "tag": "0002_abnormal_the_leader",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1725720040543,
+      "tag": "0003_swift_shooting_star",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1725720234457,
+      "tag": "0004_curvy_shatterstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1725721302779,
+      "tag": "0005_married_darkhawk",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1725778228391,
+      "tag": "0006_overrated_moondragon",
+      "breakpoints": true
     }
   ]
 }
