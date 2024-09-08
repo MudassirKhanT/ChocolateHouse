@@ -19,3 +19,11 @@ export async function POST(request: Request) {
   }
   return Response.json({ message: "Ok" }, { status: 201 });
 }
+export async function GET() {
+  try {
+    const Allwarehouses = await db.select().from(warehouses);
+    return Response.json(Allwarehouses);
+  } catch (err) {
+    return Response.json({ message: "Failed to fetch all the warehouse" }, { status: 500 });
+  }
+}
