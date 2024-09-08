@@ -1,5 +1,4 @@
 import { sql } from "drizzle-orm";
-import { int } from "drizzle-orm/mysql-core";
 import { index, integer, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
