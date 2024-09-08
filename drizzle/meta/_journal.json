@@ -57,6 +57,13 @@
       "when": 1725780432398,
       "tag": "0007_daffy_roxanne_simpson",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1725782546906,
+      "tag": "0008_flawless_vin_gonzales",
+      "breakpoints": true
     }
   ]
 }
