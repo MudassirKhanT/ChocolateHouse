@@ -2,45 +2,47 @@
 
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { useQuery } from "@tanstack/react-query";
-import { getAllProducts } from "@/http/api";
+import { getAllWarehouses } from "@/http/api";
 import { Product } from "@/types";
-import ProductSheet from "./product-sheet";
-import { useNewProduct } from "@/store/product/product-store";
 import { Loader2 } from "lucide-react";
-
-const ProductsPage = () => {
-  const { onOpen } = useNewProduct();
+import { useNewWarehouse } from "@/store/warehouse/warehouse-store";
+import { DataTable } from "./data-table";
+import WarehouseSheet from "./warehouse-sheet";
+const WarehousePage = () => {
+  const { onOpen } = useNewWarehouse();
   const {
-    data: products,
+    data: warehouses,
     isLoading,
     isError,
   } = useQuery<Product[]>({
     //used for chaching
-    queryKey: ["products"],
-    queryFn: () => getAllProducts(),
+    queryKey: ["warehouses"],
+    queryFn: () => getAllWarehouses(),
   });
+
   return (
     <>
       <div className="flex items-center justify-between">
-        <h3 className="text-2xl font-bold tracking-tight">Products</h3>
+        <h3 className="text-2xl font-bold tracking-tight">Warehouses</h3>
         <Button size={"sm"} onClick={onOpen}>
-          Add Product
+          Add Warehouse
         </Button>
-        <ProductSheet />
+        <WarehouseSheet />
       </div>
-      {isError && <span className="text-red-500">Something went wrong...</span>}
+
+      {isError && <span className="text-red-500">Something went wrong.</span>}
+
       {isLoading ? (
         <div className="flex items-center justify-center">
           <Loader2 className="size-10 animate-spin" />
         </div>
       ) : (
-        <DataTable columns={columns} data={products || []} />
+        <DataTable columns={columns} data={warehouses || []} />
       )}
     </>
   );
 };
 
-export default ProductsPage;
+export default WarehousePage;

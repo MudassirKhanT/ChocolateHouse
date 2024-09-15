@@ -1,3 +1,4 @@
+import { Warehouse } from "@/types";
 import { api } from "./client";
 
 export const getAllProducts = async () => {
@@ -11,5 +12,15 @@ export const createProduct = async (data: FormData) => {
       "Content-Type": "multipart/form-data",
     },
   });
+  return response.data;
+};
+
+export const getAllWarehouses = async () => {
+  const response = await api.get("/warehouses");
+  return await response.data;
+};
+
+export const createWarehouse = async (data: Warehouse) => {
+  const response = await api.post("/warehouses", data);
   return response.data;
 };

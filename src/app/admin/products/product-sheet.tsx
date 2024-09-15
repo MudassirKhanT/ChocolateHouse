@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "
 import CreateProducForm, { FormValues } from "./create-product-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createProduct } from "@/http/api";
-import { useNewProduct } from "@/store/product-store";
+import { useNewProduct } from "@/store/product/product-store";
 import { useToast } from "@/hooks/use-toast";
 const ProductSheet = () => {
   const { isOpen, onClose } = useNewProduct();
