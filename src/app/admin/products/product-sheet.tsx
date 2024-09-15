@@ -8,7 +8,7 @@ const ProductSheet = () => {
   const { isOpen, onClose } = useNewProduct();
   const queryClient = useQueryClient();
   //uploading data from frontend side
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: ["create-product"],
     mutationFn: (data: FormData) => createProduct(data),
     onSuccess: () => {
@@ -32,7 +32,7 @@ const ProductSheet = () => {
           <SheetTitle>Create Product</SheetTitle>
           <SheetDescription>Create a new product</SheetDescription>
         </SheetHeader>
-        <CreateProducForm onSubmit={onSubmit} />
+        <CreateProducForm onSubmit={onSubmit} disabled={isPending} />
       </SheetContent>
     </Sheet>
   );
