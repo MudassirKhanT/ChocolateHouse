@@ -1,6 +1,6 @@
 import { Warehouse } from "@/types";
 import { api } from "./client";
-
+import { DeliveryPerson } from "@/types";
 export const getAllProducts = async () => {
   const response = await api.get("/products");
   return await response.data;
@@ -22,5 +22,15 @@ export const getAllWarehouses = async () => {
 
 export const createWarehouse = async (data: Warehouse) => {
   const response = await api.post("/warehouses", data);
+  return response.data;
+};
+
+export const getAllDeliveryPersons = async () => {
+  const response = await api.get("/delivery-persons");
+  return await response.data;
+};
+
+export const createDeliveryPerson = async (data: DeliveryPerson) => {
+  const response = await api.post("/delivery-persons", data);
   return response.data;
 };
