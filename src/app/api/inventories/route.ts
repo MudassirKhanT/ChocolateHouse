@@ -13,9 +13,12 @@ export async function POST(request: Request) {
     return Response.json({ message: err }, { status: 400 });
   }
   try {
+    console.log("validatedData:", validatedData);
     await db.insert(inventories).values(validatedData);
     return Response.json({ message: "Ok" }, { status: 201 });
   } catch (err) {
+    console.log("error:", err);
+
     return Response.json({ message: "Failed to store inventories into database" }, { status: 500 });
   }
 }
