@@ -18,3 +18,10 @@ export interface DeliveryPerson {
   phone: string;
   warehouseId: number;
 }
+
+export interface Inventory {
+  id: number;
+  sku: string;
+  warehouse: string;
+  product: string;
+}

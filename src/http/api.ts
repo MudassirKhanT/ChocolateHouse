@@ -34,3 +34,8 @@ export const createDeliveryPerson = async (data: DeliveryPerson) => {
   const response = await api.post("/delivery-persons", data);
   return response.data;
 };
+
+export const getAllInventories = async () => {
+  const response = await api.get("/inventories");
+  return await response.data;
+};
