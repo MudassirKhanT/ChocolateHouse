@@ -8,7 +8,7 @@ import { getAllDeliveryPersons } from "@/http/api";
 import { Product } from "@/types";
 import { Loader2 } from "lucide-react";
 import { useNewDeliveryPerson } from "@/store/deliveryPersons/deliveryPersons-store";
-import { DataTable } from "./data-table";
+import { DataTable } from "../_components/data-table";
 import DeliveryPersonSheet from "./deliverypersons-sheet";
 
 const DeliveryPersonsPage = () => {
