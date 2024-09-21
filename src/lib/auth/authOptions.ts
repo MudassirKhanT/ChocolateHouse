@@ -19,7 +19,7 @@ export const authOptions: AuthOptions = {
           provider: "GOOGLE",
           external_id: profile.sub,
           image: profile.picture,
-          role: "admin",
+          role: "customer",
         };
 
         try {

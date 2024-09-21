@@ -9,7 +9,7 @@ export const users = pgTable("users", {
   provider: varchar("provider", { length: 20 }).notNull(),
   external_id: varchar("external_id", { length: 100 }).notNull(),
   image: text("image").notNull(),
-  role: varchar("role", { length: 12 }).notNull(),
+  role: varchar("role", { length: 12 }).notNull().default("customer"),
   updatedAt: timestamp("updated_at").default(sql`CURRENT_TIMESTAMP`),
   createdAt: timestamp("created_at").default(sql`CURRENT_TIMESTAMP`),
 });
