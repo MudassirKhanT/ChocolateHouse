@@ -49,6 +49,14 @@ const Singlepage = () => {
     console.log("Values:", values);
   };
 
+  const qty = form.watch("qty");
+  //react useMemo hook for calulating the price value
+  const price = React.useMemo(() => {
+    if (product?.price) {
+      return product.price * qty;
+    }
+    return 0;
+  }, [qty, product]);
   return (
     <>
       <Header />
@@ -137,6 +145,7 @@ const Singlepage = () => {
                             <FormControl>
                               <Input
                                 type="number"
+                                min={0}
                                 className="h-9 border-brown-200 bg-white placeholder:text-gray-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-brown-400 focus-visible:ring-offset-0"
                                 placeholder="e.g. 1"
                                 {...field}
@@ -155,7 +164,7 @@ const Singlepage = () => {
                   <Separator className="my-6 bg-brown-900" />
 
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl font-semibold">$50</span>
+                    <span className="text-3xl font-semibold">${price}</span>
                     {session ? (
                       <Button type="submit">Buy Now</Button>
                     ) : (
